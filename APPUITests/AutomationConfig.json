@@ -1,0 +1,8 @@
+{
+    "Browser": "Chrome",
+    "Environment": "QA",
+    "AppURL": "https://parabank.parasoft.com/parabank/index.htm",
+    "PageTimeoutInSec": 30,
+    "UserName": "automationuser",
+    "Password": "Ex@ze@123"
+}
