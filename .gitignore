@@ -1,0 +1,9 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/APPUITests/bin/Debug/net8.0
+/.vs
+/AutoFrameworkCoreLib/obj/Debug/net8.0
+/AutoFrameworkCoreLib/obj
+/AutoFrameworkCoreLib/bin/Debug/net8.0
