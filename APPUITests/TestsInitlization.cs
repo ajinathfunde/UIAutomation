@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using APPUITests.Models.Config;
 using AutoFrameworkCoreLib.Logger;
+using AutoFrameworkCoreLib.Reports;
 
 namespace APPUITests
 {
@@ -20,6 +21,8 @@ namespace APPUITests
         public TestsInitlization()
         {
             logger = Logger.Instance;
+            //call report
+            //ExtentManager.Initialize();
         }
 
         //Identifies a method that is called once to perform setup before any child tests are run.
@@ -39,6 +42,7 @@ namespace APPUITests
         //Identifies a method to be called once after all the child tests have run. The method is guaranteed to be called, even if an exception is thrown
         [OneTimeTearDown]
         public void TearDown() {
+            ExtentManager.Flush();
             logger.Info("Cleaning some resources");
         }
     }

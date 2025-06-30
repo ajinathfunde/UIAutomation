@@ -149,6 +149,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "ExtentReports": {
+              "target": "Package",
+              "version": "[4.1.0, )"
+            },
+            "ExtentReports.Core": {
+              "target": "Package",
+              "version": "[1.0.3, )"
+            },
             "Selenium.Support": {
               "target": "Package",
               "version": "[4.33.0, )"
