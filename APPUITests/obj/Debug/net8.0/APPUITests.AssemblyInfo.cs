@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("APPUITests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d2f276275a2fd9dfb78a012ad3e8b42792933e24")]
 [assembly: System.Reflection.AssemblyProductAttribute("APPUITests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("APPUITests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

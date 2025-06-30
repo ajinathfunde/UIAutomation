@@ -1,19 +1,19 @@
 using OpenQA.Selenium;
 
-namespace APPUITests.Pages
+namespace APPUITests.WebPages
 {
-    public class Login
+    public class LoginPage
     {
         private readonly IWebDriver _driver;
 
         // Locators
-        private readonly By _userNameField = By.Name("username");
-        private readonly By _passwordField = By.Name("password");
-        private readonly By _loginButton = By.XPath("//div[@id='loginPanel']/form/div[3]/input");
-        private readonly By _loginError = By.XPath("//div[@id='rightPanel']/p");
+        private readonly By _userNameField = By.Id("username");
+        private readonly By _passwordField = By.Id("password");
+        private readonly By _loginButton = By.Id("submit");
+        private readonly By _loginError = By.Id("error");
 
         // Constructor
-        public Login(IWebDriver driver)
+        public LoginPage(IWebDriver driver)
         {
             _driver = driver;
         }

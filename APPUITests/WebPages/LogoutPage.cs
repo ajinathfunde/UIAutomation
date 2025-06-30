@@ -2,16 +2,16 @@
 using OpenQA.Selenium.DevTools.V135.Emulation;
 
 
-namespace APPUITests.Pages
+namespace APPUITests.WebPages
 {
-    public class Logout
+    public class LogoutPage
     {
 
         private readonly IWebDriver _driver;
 
         //Locators
         private readonly By _mainMenu = By.Id("react-burger-menu-btn");
-        private readonly By _logoutButton = By.XPath("//div[@id='leftPanel']/ul/li[8]/a");
+        private readonly By _logoutButton = By.XPath("//div[@id='loop-container']/div//a");
 
 
         //find elements
@@ -19,7 +19,7 @@ namespace APPUITests.Pages
 
 
         //constructor
-        public Logout(IWebDriver driver)
+        public LogoutPage(IWebDriver driver)
         {
             _driver = driver;
         }
