@@ -1,5 +1,6 @@
 ﻿using APPUITests.Helpers;
 using APPUITests.Models.Config;
+using APPUITests.TestData;
 using APPUITests.WebPages;
 using AutoFrameworkCoreLib.Drivers.WebDrivers;
 using AutoFrameworkCoreLib.Logger;
@@ -14,11 +15,8 @@ namespace APPUITests.TestCases
     [Parallelizable(ParallelScope.Fixtures)]
     public class LoginTC : BaseTest
     {
-
         private IWebDriver driver;
         private WebDriverFactory driverFactory;
-        string loginHomePageTitle = "Test Login | Practice Test Automation";
-        string afterLoginPageTitle = "Logged In Successfully | Practice Test Automation";
 
         [SetUp]
         public void Setup()
@@ -29,13 +27,14 @@ namespace APPUITests.TestCases
             driver = driverFactory.Create(BrowserHelper.Parse(browser));
         }
 
-        [Test]
-        public void TestLoginFunwithValidCredentionals()
+
+        [Test,TestCaseSource(typeof(LoginMsgDataProvider),nameof(LoginMsgDataProvider.SuccessMgs))]
+        public void TestLoginFunwithValidCredentionals(string loginHomePageTitle, string afterLoginPageTitle)
         {
             try
             {
-                ExtentManager.Test.Info("Launching application url");
-                logger.Info("Launching application url");
+                ExtentManager.Test.Info("Launching application");
+                logger.Info("Launching application");
 
                 driver.Navigate().GoToUrl(appURL);
                 ExtentManager.Test.Info($"Navigated to {appURL}");
@@ -74,14 +73,14 @@ namespace APPUITests.TestCases
                 throw;
             }
         }
-
-        [Test]
-        public void TestLoginFunwithInvalidCredentionals()
+ 
+        [Test,TestCaseSource(typeof(LoginMsgDataProvider),nameof(LoginMsgDataProvider.FailureMgs))]
+        public void TestLoginFunwithInvalidCredentionals(string expectedErrorMessage)
         {
             try
             {
-                ExtentManager.Test.Info("Launching application url");
-                logger.Info("Launching application url");
+                ExtentManager.Test.Info("Launching application");
+                logger.Info("Launching application");
 
                 driver.Navigate().GoToUrl(appURL);
                 ExtentManager.Test.Info($"Navigated to {appURL}");
@@ -97,14 +96,11 @@ namespace APPUITests.TestCases
                 loginPage.LoginAs(ConfigReader.Settings.UserName, "1234");
                 ExtentManager.Test.Info("Checking user logged in with invalid credentials or not");
                 //add assertion to check if user is logged in or not
-
-
                 Thread.Sleep(300);
-
                 Assert.That(driver.Title.Trim(), Is.EqualTo(loginHomePageTitle), "Failed to validate user is logged in or not");
                 ExtentManager.Test.Info("Error page displayed after invalid login");
 
-                string expectedErrorMessage = "Your password is invalid!";
+                //string expectedErrorMessage = "Your password is invalid!";
                 string errorMessage = loginPage.GetLoginErrorMessage();
 
                 ExtentManager.Test.Info($"Error message displayed: {errorMessage}");
