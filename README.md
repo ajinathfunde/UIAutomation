@@ -1,8 +1,10 @@
 Automation Test Framework Documentation
 ---
 **1. Project Overview**
-   
-		This project is a robust, maintainable, and scalable UI automation framework for web applications using C#, Selenium WebDriver, and NUnit. It supports parallel execution, advanced reporting, and screenshot capture for each test case. The framework is designed for easy extension and maintainability, following best practices such as the Page Object Model,Factory Design Pattern and data-driven testing.
+
+This project is a robust, maintainable, and scalable UI automation framework for web applications using C#, Selenium WebDriver, and NUnit.
+It supports parallel execution, advanced reporting, and screenshot capture for each test case.
+The framework is designed for easy extension and maintainability, following best practices such as the Page Object Model,Factory Design Pattern and data-driven testing.
 
 ---
 **2. Technology Stack**
@@ -76,7 +78,9 @@ Automation Test Framework Documentation
     3.	Run Tests:
       		From Visual Studio Test Explorer, select and run tests.
       		Or, use the command line
-        	dotnet test       
+        	dotnet test 
+	 	dotnet test --% -- TestRunParameters.Parameter(name=\"Browser\", value=\"Chrome\")
+   	 	dotnet test --% -- TestRunParameters.Parameter(name=\"Browser\", value=\"Edge\")
       		To specify a browser at runtime, update the config or pass as an environment variable if supported.
     4.	Parallel Execution
       		Tests are decorated with [Parallelizable(ParallelScope.Fixtures)] for parallel execution by default.
