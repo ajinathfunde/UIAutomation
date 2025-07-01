@@ -143,7 +143,25 @@ The framework is designed for easy extension and maintainability, following best
   
 ---
 
-**10. Example Test Case Flow**
+**10. Logging**
+
+Logger OVerview
+
+	The framework uses a custom Logger class to provide consistent logging throughout the test execution. The logger supports different log levels, including Info, Debug, Error, and Warn. Logging is integrated into all test cases and framework components to capture key events, actions, and errors.
+
+Logger Usage
+
+	•Info: Used for general information about test steps and flow.
+	
+	•Debug: Used for detailed debugging information (if enabled).
+	
+	•Error: Used to log exceptions and errors during test execution.
+	
+	•Warn: Used to log warnings or potential issues.
+
+
+
+**11. Example Test Case Flow**
   1.	Test Initialization:
      
     •	Browser and reporting are initialized.
